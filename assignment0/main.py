@@ -5,14 +5,15 @@ import argparse
 from assignment0 import *
 from assignment0.db import createdb,populatedb,disconnectdb, status
 from assignment0.extractincidents import extractincidents
-from assignment0.fetchincidents import fetchincidents
+from assignment0.fetchincidents import fetch_incidents
+
 
 def main(url):
     """
     Calling the main function should download data insert it into a database and print a summary of the incidents.
     """
     # Download data
-    incident_data = fetchincidents(url)
+    incident_data = fetch_incidents(url)
 
     # Extract data
     incidents = extractincidents(incident_data)

@@ -7,7 +7,7 @@ exclude_strings = ["Date / Time Incident Number Location Nature Incident ORI", "
 def insertIncident(line):       
     if line not in exclude_strings:
 
-        x =line.find("NORMAN POLICE DEPARTMENT")
+        x = line.find("NORMAN POLICE DEPARTMENT")
 
         if x>0:
             line= line[:x]
@@ -44,14 +44,13 @@ def insertIncident(line):
             with open("output.csv","a") as of:
                 of.write(f"{line}\n")
             return None
-   
 
         return incident
 
-def extractincidents(filePath):
+def extractincidents(file):
     with open("output.csv","a") as of:
         of.write(f"date_time,incident_number,location,location,ori\n")
-    reader = PdfReader(filePath)
+    reader = PdfReader(file)
     incidents=list()
     for page in reader.pages:
         page_text = page.extract_text() 
