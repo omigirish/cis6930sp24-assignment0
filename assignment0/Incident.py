@@ -9,7 +9,10 @@ class IncidentReport:
                     r'\b[A-Z]{7}\b$'  # Letter-only codes, e.g., 'EMSSTAT'
                 ]),
                 "incident_number": r'\d{4}-\d{8}',
-                "location": r"^([\d\sA-Z\/]+)\s(.+)$"
+                # "location": r"^([\d\sA-Z\/'-,<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$",
+                # "location": r"^([\d\sA-Z\/'-<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$"
+                "location": r"^((?:(?!COP DDACTS|MVA|911)[\d\sA-Z\/'-<>.;]+)|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$"
+
             }
     
     def __init__(self, date_time, incident_number, location, nature, ori):

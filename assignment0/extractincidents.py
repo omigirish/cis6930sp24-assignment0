@@ -28,7 +28,7 @@ def insertIncident(line):
             ori = match.group().strip()
             j=match.start()
 
-        match = re.match(IncidentReport.rexpressions["location"], line[i+1:j])
+        match = re.match(IncidentReport.rexpressions["location"], line[i:j])
 
         if match:
             location = match.group(1).strip()
@@ -42,6 +42,8 @@ def insertIncident(line):
         
         except UnboundLocalError as e:
             print(f"Invalid Line: {e}")
+            with open("output.csv","a") as of:
+                of.write(f"{line}\n")
             return None
    
 
@@ -49,7 +51,7 @@ def insertIncident(line):
 
 def extractincidents(filePath):
     with open("output.csv","a") as of:
-        of.write(f"date_time,incident_number,location,location,ori")
+        of.write(f"date_time,incident_number,location,location,ori\n")
     reader = PdfReader(filePath)
     incidents=list()
     for page in reader.pages:
