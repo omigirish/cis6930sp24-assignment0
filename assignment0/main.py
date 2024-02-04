@@ -2,24 +2,32 @@
 # Example main.py
 import argparse
 
-import assignment0
+from assignment0 import *
+from assignment0.db import createdb,populatedb,disconnectdb, status
+from assignment0.extractincidents import extractincidents
+from assignment0.fetchincidents import fetchincidents
 
 def main(url):
-    ''' Calling the main function should download data insert it into a database and print a summary of the incidents.'''
+    """
+    Calling the main function should download data insert it into a database and print a summary of the incidents.
+    """
     # Download data
-    incident_data = assignment0.fetchincidents(url)
+    incident_data = fetchincidents(url)
 
     # Extract data
-    incidents = assignment0.extractincidents(incident_data)
+    incidents = extractincidents(incident_data)
 	
     # Create new database
-    db = assignment0.createdb()
+    db = createdb()
 	
     # Insert data
-    assignment0.populatedb(db, incidents)
+    populatedb(db, incidents)
 	
     # Print incident counts
-    assignment0.status(db)
+    status(db)
+
+    # Close the connection
+    disconnectdb(db)
 
 
 if __name__ == '__main__':

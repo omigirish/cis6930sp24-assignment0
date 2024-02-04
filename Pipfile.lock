@@ -1,0 +1,34 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "58bf71dd630063d3c9cd72abc155f3529429313aeb6a4bac38cccd0fbf5ace50"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.11"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "assignment0": {
+            "editable": true,
+            "file": "."
+        },
+        "pypdf": {
+            "hashes": [
+                "sha256:871badcfe335dd68b6b563aa7646288c6b86f9ceecffb21e86341261d65d8173",
+                "sha256:fe7c313c7e8074a516eae9d9df0111b7b9769f7a210479af7a342d27270ef81a"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.6'",
+            "version": "==4.0.1"
+        }
+    },
+    "develop": {}
+}

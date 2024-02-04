@@ -1,0 +1,190 @@
+Traffic Stop|316
+Transfer/Interfacility|92
+Disturbance/Domestic|63
+Sick Person|58
+Contact a Subject|53
+Breathing Problems|41
+Suspicious|40
+Alarm|34
+Welfare Check|33
+Falls|32
+Larceny|31
+Chest Pain|25
+Trespassing|24
+Check Area|23
+Shots Heard|21
+Abdominal Pains/Problems|20
+Public Assist|20
+Harassment / Threats Report|19
+Motorist Assist|17
+Fire Commercial|16
+Follow Up|16
+Unconscious/Fainting|15
+Assault EMS Needed|14
+Hit and Run|14
+Stroke|14
+Medical Call Pd Requested|13
+Call Nature Unknown|12
+Fraud|11
+Assist Police|8
+Unknown Problem/Man Down|8
+Assault|7
+Burglary|7
+Extra Patrol|7
+Fire Alarm|7
+Found Item|7
+Mutual Aid|7
+Noise Complaint|7
+Non Injury|7
+Vandalism|7
+Cardiac Respritory Arrest|6
+Convulsion/Seizure|6
+Diabetic Problems|6
+Escort/Transport|6
+Fire Controlled Burn|6
+Runaway or Lost Child|6
+Shooting Stabbing Penetrating|6
+Traumatic Injury|6
+Animal Complaint|5
+Animal Livestock|5
+Parking Problem|5
+Civil Standby|4
+Heart Problems/AICD|4
+Open Door/Premises Check|4
+Alarm Holdup/Panic|3
+Animal Trapped|3
+Assist Fire|3
+Fight|3
+Fire Dumpster|3
+Fire Grass|3
+Fire Smoke Investigation|3
+Fireworks|3
+Item Assignment|3
+Molesting|3
+OK-9 Sick Person|3
+Public Intoxication|3
+Reckless Driving|3
+Shooting|3
+Special Assignment|3
+Test Call|3
+Warrant Service|3
+Allergies/Envenomations|2
+Animal Dead|2
+Animal Vicious|2
+Animal at Large|2
+Back Pain|2
+Body Reported|2
+Hemorrhage/Lacerations|2
+Overdose/Poisoning|2
+With Injuries|2
+Animal Bite|1
+Animal Injured|1
+CORNERS, NORMAN Check Area|1
+DDACTS|1
+Debris in Roadway|1
+Fire Odor Investigation|1
+LAIRD'S WOODS CIR Alarm|1
+OK-9 Unconscious/Fainting|1
+Prowler|1
+Relationships|1
+ST, NORMAN Pick Up Partner|1
+ST, NORMAN, OK Check Area|1
+Stolen Vehicle|1
+Traffic Stop|403
+Transfer/Interfacility|123
+Disturbance/Domestic|86
+Sick Person|76
+Contact a Subject|65
+Alarm|50
+Welfare Check|48
+Suspicious|44
+Breathing Problems|43
+Larceny|39
+Falls|37
+Check Area|29
+Chest Pain|28
+Trespassing|27
+Public Assist|24
+Follow Up|23
+Shots Heard|23
+Abdominal Pains/Problems|22
+Harassment / Threats Report|22
+Motorist Assist|20
+Unconscious/Fainting|19
+Medical Call Pd Requested|17
+Assault EMS Needed|16
+Fire Commercial|16
+Fraud|16
+Hit and Run|16
+Stroke|14
+Call Nature Unknown|13
+Mutual Aid|12
+Non Injury|11
+Vandalism|11
+Assault|10
+Assist Police|10
+Burglary|10
+Convulsion/Seizure|10
+Fire Alarm|10
+Parking Problem|10
+Animal Complaint|8
+Cardiac Respritory Arrest|8
+Found Item|8
+Heart Problems/AICD|8
+Noise Complaint|8
+Runaway or Lost Child|8
+Unknown Problem/Man Down|8
+Escort/Transport|7
+Extra Patrol|7
+Fire Controlled Burn|7
+Open Door/Premises Check|7
+Animal Dead|6
+Animal at Large|6
+Diabetic Problems|6
+Shooting Stabbing Penetrating|6
+Traumatic Injury|6
+Animal Livestock|5
+Civil Standby|5
+Test Call|5
+Alarm Holdup/Panic|4
+Allergies/Envenomations|4
+Animal Vicious|4
+Overdose/Poisoning|4
+Supplement Report|4
+Warrant Service|4
+With Injuries|4
+Animal Trapped|3
+Assist Fire|3
+Body Reported|3
+Fight|3
+Fire Dumpster|3
+Fire Grass|3
+Fire Smoke Investigation|3
+Fireworks|3
+Headache|3
+Hemorrhage/Lacerations|3
+Item Assignment|3
+Molesting|3
+OK-9 Sick Person|3
+Public Intoxication|3
+Reckless Driving|3
+Shooting|3
+Special Assignment|3
+Stolen Vehicle|3
+Back Pain|2
+DDACTS|2
+Fire Odor Investigation|2
+Animal Bite|1
+Animal Injured|1
+CORNERS, NORMAN Check Area|1
+Debris in Roadway|1
+Drug Violation|1
+Fire Vehicle|1
+LAIRD'S WOODS CIR Alarm|1
+OK-9 Chest Pain|1
+OK-9 Unconscious/Fainting|1
+Problem Solving|1
+Prowler|1
+Relationships|1
+ST, NORMAN Pick Up Partner|1
+ST, NORMAN, OK Check Area|1
