@@ -41,7 +41,6 @@ def insertIncident(line):
             
         
         except UnboundLocalError as e:
-            print(f"Invalid Line: {e}")
             with open("output.csv","a") as of:
                 of.write(f"{line}\n")
             return None

@@ -41,6 +41,7 @@ def status(db):
     with open("output.txt","a") as f:
         for (nature, count) in data:
             f.write(f"{nature}|{count}\n")
+            print(f"{nature}|{count}")
 
     curr.close()
 
