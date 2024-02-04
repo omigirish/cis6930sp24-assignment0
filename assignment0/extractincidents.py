@@ -30,16 +30,22 @@ def insertIncident(line):
 
         match = re.match(IncidentReport.rexpressions["location"], line[i:j])
 
-        if match:
-            location = match.group(1).strip()
-            nature = match.group(2).strip()
+        try:
 
-        try: 
+            if match:
+                location = match.group(1).strip()
+                nature = match.group(2).strip()
+
+                keyword = location.split(" ")[-1]
+                if keyword in ["MVA", "COP", "DDACTS", "911"]:
+                    nature = keyword + " " + nature
+                    # Remove the keyword from the address
+                    location = ' '.join(location.split()[:-1])
+
             incident = IncidentReport(date_time,incident_number,location,nature,ori)
             with open("output.csv","a") as of:
                 of.write(f"{date_time},{incident_number},{location},{nature},{ori}\n")
-            
-        
+                
         except UnboundLocalError as e:
             with open("output.csv","a") as of:
                 of.write(f"{line}\n")

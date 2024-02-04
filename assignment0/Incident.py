@@ -11,7 +11,7 @@ class IncidentReport:
                 "incident_number": r'\d{4}-\d{8}',
                 # "location": r"^([\d\sA-Z\/'-,<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$",
                 # "location": r"^([\d\sA-Z\/'-<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$"
-                "location": r"^((?:(?!COP DDACTS|MVA|911)[\d\sA-Z\/'-<>.;]+)|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$"
+                "location": r"^([\d\sA-Z\/',-<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$"
 
             }
     
