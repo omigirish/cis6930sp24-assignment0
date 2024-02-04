@@ -9,7 +9,7 @@ from assignment0.fetchincidents import fetch_incidents
 
 
 def main(url):
-    print(url)
+    print(url.split("/")[-1])
     """
     Calling the main function should download data insert it into a database and print a summary of the incidents.
     """
