@@ -1,5 +1,5 @@
 from pypdf import PdfReader
-from Incident import IncidentReport
+from assignment0.Incident import IncidentReport
 import re 
 
 exclude_strings = ["Date / Time Incident Number Location Nature Incident ORI", "Daily Incident Summary (Public)"]
@@ -37,26 +37,27 @@ def insertIncident(line):
                 nature = match.group(2).strip()
 
                 keyword = location.split(" ")[-1]
-                if keyword in ["MVA", "COP", "DDACTS", "911"]:
+                if keyword in ["MVA", "COP", "DDACTS", "911","EMS"]:
                     nature = keyword + " " + nature
                     # Remove the keyword from the address
                     location = ' '.join(location.split()[:-1])
 
             incident = IncidentReport(date_time,incident_number,location,nature,ori)
-            with open("output.csv","a") as of:
-                of.write(f"{date_time},{incident_number},{location},{nature},{ori}\n")
                 
         except UnboundLocalError as e:
-            with open("output.csv","a") as of:
-                of.write(f"{line}\n")
             return None
 
         return incident
 
 def extractincidents(file):
-    with open("output.csv","a") as of:
-        of.write(f"date_time,incident_number,location,location,ori\n")
-    reader = PdfReader(file)
+
+    try:
+        reader = PdfReader(file)
+
+    except FileNotFoundError as e:
+        print(f"File not found: {e}")
+        return []
+
     incidents=list()
     for page in reader.pages:
         page_text = page.extract_text() 
@@ -65,7 +66,3 @@ def extractincidents(file):
             if i:
                 incidents.append(i)
     return incidents
-
-
-
-

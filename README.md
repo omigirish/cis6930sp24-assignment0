@@ -1,10 +1,10 @@
 # cis6930sp24-assignment0
 CIS 6930 - Data Engineering Assignement 0 : Extract Data about incidents from NormanPD
 
-Name:
+Name: Girish Vinayak Salunke
 
-# Assignment Description (in your own words)
-
+# Assignment Description
+The assignment involves developing a data engineering solution to extract incident data from the Norman Police Department website. The process includes downloading incident reports, extracting relevant information from PDF files, and storing the data in a SQLite database.
 
 # How to install
 pipenv install

@@ -1,5 +1,4 @@
 import urllib.request
-import os
 
 import urllib.request
 from io import BytesIO
@@ -17,6 +16,4 @@ def fetch_incidents(url, headers={}):
         # Read the content of the response into BytesIO
         file_object = BytesIO(response.read())
     
-    return file_object
-
-                                                                  
+    return file_object                                                     

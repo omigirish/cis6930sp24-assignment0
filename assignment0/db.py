@@ -1,6 +1,9 @@
 import sqlite3
-
+import os
 def createdb():
+    if os.path.exists("./resources/normanpd.db"):
+        os.remove("./resources/normanpd.db")
+
     conn = sqlite3.connect("./resources/normanpd.db")
     curr = conn.cursor()
     curr.execute("""
@@ -10,7 +13,7 @@ def createdb():
                 incident_location TEXT,
                 nature TEXT,
                 incident_ori TEXT
-                 );
+                );
                 """);
     conn.commit()
     curr.close()
@@ -37,14 +40,9 @@ def status(db):
                 GROUP BY nature
                 ORDER BY COUNT(*) DESC, nature ASC;
                 """)
-    
-    with open("output.txt","a") as f:
-        for (nature, count) in data:
-            f.write(f"{nature}|{count}\n")
-            print(f"{nature}|{count}")
-
+    for (nature, count) in data:
+        print(f"{nature}|{count}")
     curr.close()
-
 
 def disconnectdb(conn):
     conn.close()
