@@ -40,8 +40,18 @@ def status(db):
                 GROUP BY nature
                 ORDER BY COUNT(*) DESC, nature ASC;
                 """)
+    
+    blank_count=0
     for (nature, count) in data:
-        print(f"{nature}|{count}")
+        if nature:
+            print(f"{nature}|{count}")
+        else:
+            blank_count=count
+        
+    if blank_count>0:
+        print(f"|{count}")
+
+
     curr.close()
 
 def disconnectdb(conn):

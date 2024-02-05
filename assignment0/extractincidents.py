@@ -31,18 +31,21 @@ def insertIncident(line):
         match = re.match(IncidentReport.rexpressions["location"], line[i:j])
 
         try:
+            if i+1==j:
+                incident = IncidentReport(date_time,incident_number,"","",ori)
+                
+            else:
+                if match:
+                    location = match.group(1).strip() if match.group(1).strip() else ""
+                    nature = match.group(2).strip() if match.group(2).strip() else ""
 
-            if match:
-                location = match.group(1).strip()
-                nature = match.group(2).strip()
+                    keyword = location.split(" ")[-1]
+                    if keyword in ["MVA", "COP", "DDACTS", "911","EMS"]:
+                        nature = keyword + " " + nature
+                        # Remove the keyword from the address
+                        location = ' '.join(location.split()[:-1])
 
-                keyword = location.split(" ")[-1]
-                if keyword in ["MVA", "COP", "DDACTS", "911","EMS"]:
-                    nature = keyword + " " + nature
-                    # Remove the keyword from the address
-                    location = ' '.join(location.split()[:-1])
-
-            incident = IncidentReport(date_time,incident_number,location,nature,ori)
+                incident = IncidentReport(date_time,incident_number,location,nature,ori)
                 
         except UnboundLocalError as e:
             return None

@@ -11,9 +11,13 @@ def fetch_incidents(url, headers={}):
     # Set headers
     headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"     
     
-    # Open the URL and return the file object
-    with urllib.request.urlopen(urllib.request.Request(url, headers=headers)) as response:
-        # Read the content of the response into BytesIO
-        file_object = BytesIO(response.read())
-    
+    try:
+        # Open the URL and return the file object
+        with urllib.request.urlopen(urllib.request.Request(url, headers=headers)) as response:
+            # Read the content of the response into BytesIO
+            file_object = BytesIO(response.read())
+
+    except urllib.error.HTTPError as e:
+        print(f"Failed to download file: {e}")
+
     return file_object                                                     
