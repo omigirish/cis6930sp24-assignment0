@@ -9,8 +9,6 @@ class IncidentReport:
                     r'\b[A-Z]{7}\b$'  # Letter-only codes, e.g., 'EMSSTAT'
                 ]),
                 "incident_number": r'\d{4}-\d{8}',
-                # "location": r"^([\d\sA-Z\/'-,<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$",
-                # "location": r"^([\d\sA-Z\/'-<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$"
                 "location": r"^([\d\sA-Z\/',-<>.;]+|(?:\d+\.\d+;\-\d+\.\d+))\s(.+)$"
 
             }
@@ -18,7 +16,6 @@ class IncidentReport:
     def __init__(self, date_time, incident_number, location, nature, ori):
         """
         Initializes a new instance of the IncidentReport class.
-
         :param date_time: The date and time of the incident.
         :param incident_number: The unique number assigned to the incident.
         :param location: The location where the incident occurred.

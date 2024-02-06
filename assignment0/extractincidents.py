@@ -7,10 +7,10 @@ exclude_strings = ["Date / Time Incident Number Location Nature Incident ORI", "
 def insertIncident(line):       
     if line not in exclude_strings:
 
-        x = line.find("NORMAN POLICE DEPARTMENT")
+        # x = line.find("NORMAN POLICE DEPARTMENT")
 
-        if x>0:
-            line= line[:x]
+        # if x>0:
+        #     line= line[:x]
 
         i,j= (0,0)
 
@@ -39,9 +39,23 @@ def insertIncident(line):
                     location = match.group(1).strip() if match.group(1).strip() else ""
                     nature = match.group(2).strip() if match.group(2).strip() else ""
 
+
                     keyword = location.split(" ")[-1]
                     if keyword in ["MVA", "COP", "DDACTS", "911","EMS"]:
                         nature = keyword + " " + nature
+                        
+                    k=0
+
+                    for c in nature:
+                        if not (ord(c) >= 65 and ord(c)<=90):
+                            break
+                        k+=1
+
+                    if ord(nature[k])!=32 and k!=0:
+                        location = location + nature[:k]
+                        nature = nature[k-1:]
+
+
                         # Remove the keyword from the address
                         location = ' '.join(location.split()[:-1])
 
@@ -64,8 +78,11 @@ def extractincidents(file):
     incidents=list()
     for page in reader.pages:
         page_text = page.extract_text() 
-        for line in page_text.split("\n"):
-            i = insertIncident(line)
+        lines = re.findall(r'(\b\d{1,2}/\d{1,2}/\d{4} \d{1,2}:\d{2}\b.*?)(?=\b\d{1,2}/\d{1,2}/\d{4} \d{1,2}:\d{2}\b)',page_text,re.DOTALL)
+        
+        for line in lines:
+            i = insertIncident(line.strip("\n"))
             if i:
                 incidents.append(i)
+
     return incidents

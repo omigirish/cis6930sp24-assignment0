@@ -8,6 +8,11 @@ def test_insertIncident_valid_line():
     incident = insertIncident(line)
     assert isinstance(incident, IncidentReport)
 
+def test_insertIncident_valid_line2():
+    line = "1/20/2024 6:42 2024-00004434W STATE HWY 9 HWY / I35 NB ON RAMP 108A RAMPMotorist Assist OK0140200"
+    incident = insertIncident(line)
+    assert isinstance(incident, IncidentReport)
+
 def test_insertIncident_invalid_line():
     line = "1/3/2024 8:21 2024-00000490"
     incident = insertIncident(line)

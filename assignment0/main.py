@@ -7,7 +7,6 @@ from assignment0.db import createdb,populatedb,disconnectdb, status
 from assignment0.extractincidents import extractincidents
 from assignment0.fetchincidents import fetch_incidents
 
-
 def main(url):
     """
     Calling the main function should download data insert it into a database and print a summary of the incidents.
