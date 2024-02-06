@@ -44,16 +44,16 @@ def insertIncident(line):
                     if keyword in ["MVA", "COP", "DDACTS", "911","EMS"]:
                         nature = keyword + " " + nature
                         
-                    k=0
+                    # k=0
 
-                    for c in nature:
-                        if not (ord(c) >= 65 and ord(c)<=90):
-                            break
-                        k+=1
+                    # for c in nature:
+                    #     if not (ord(c) >= 65 and ord(c)<=90):
+                    #         break
+                    #     k+=1
 
-                    if ord(nature[k])!=32 and k!=0:
-                        location = location + nature[:k]
-                        nature = nature[k-1:]
+                    # if ord(nature[k])!=32 and k!=0:
+                    #     location = location + nature[:k]
+                    #     nature = nature[k-1:]
 
 
                         # Remove the keyword from the address
