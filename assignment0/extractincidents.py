@@ -43,21 +43,18 @@ def insertIncident(line):
                     keyword = location.split(" ")[-1]
                     if keyword in ["MVA", "COP", "DDACTS", "911","EMS"]:
                         nature = keyword + " " + nature
-                        
-                    # k=0
-
-                    # for c in nature:
-                    #     if not (ord(c) >= 65 and ord(c)<=90):
-                    #         break
-                    #     k+=1
-
-                    # if ord(nature[k])!=32 and k!=0:
-                    #     location = location + nature[:k]
-                    #     nature = nature[k-1:]
-
-
                         # Remove the keyword from the address
                         location = ' '.join(location.split()[:-1])
+                        
+                    k=0
+                    for c in nature:
+                        if not (ord(c) >= 65 and ord(c)<=90):
+                            break
+                        k+=1
+
+                    if ord(nature[k])!=32 and k!=0:
+                        location = location + nature[:k]
+                        nature = nature[k-1:]
 
                 incident = IncidentReport(date_time,incident_number,location,nature,ori)
                 
@@ -77,9 +74,9 @@ def extractincidents(file):
 
     incidents=list()
     for page in reader.pages:
-        page_text = page.extract_text() 
-        lines = re.findall(r'(\b\d{1,2}/\d{1,2}/\d{4} \d{1,2}:\d{2}\b.*?)(?=\b\d{1,2}/\d{1,2}/\d{4} \d{1,2}:\d{2}\b)',page_text,re.DOTALL)
-        
+        page_text = page.extract_text()
+        lines = re.findall(r'(\d{1,2}/\d{1,2}/\d{4}.*?)(?=\d{1,2}/\d{1,2}/\d{4}|$)',page_text,re.DOTALL)
+                           
         for line in lines:
             i = insertIncident(line.strip("\n"))
             if i:
