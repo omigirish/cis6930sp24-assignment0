@@ -75,11 +75,14 @@ def extractincidents(file):
     incidents=list()
     for page in reader.pages:
         page_text = page.extract_text()
+        page_text=page_text.replace("NORMAN POLICE DEPARTMENT", "")
+        # page_text=page_text.replace("NORMAN POLICE DEPARTMENT\n", "")
         lines = re.findall(r'(\d{1,2}/\d{1,2}/\d{4}.*?)(?=\d{1,2}/\d{1,2}/\d{4}|$)',page_text,re.DOTALL)
                            
         for line in lines:
-            i = insertIncident(line.strip("\n"))
+            i = insertIncident(line.split("\n")[0])
             if i:
                 incidents.append(i)
+            # print(line.split("\n")[0])
 
     return incidents
