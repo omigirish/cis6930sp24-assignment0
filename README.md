@@ -6,6 +6,10 @@ Name: Girish Vinayak Salunke
 ## Assignment Description
 The assignment involves developing a data engineering solution to extract incident data from the Norman Police Department website. The process includes downloading incident reports, extracting relevant information from PDF files, and storing the data in a SQLite database.
 
+Full details of the requirement of the assignment can be found [here](https://ufdatastudio.com/cis6930sp24/assignments/0).
+
+A sample of the pdf file from which we can extract data can be found [here](https://www.normanok.gov/sites/default/files/documents/2024-01/2024-01-03_daily_incident_summary.pdf).
+
 ## How to install
 Install pip and the then install pipenv
 ```
