@@ -25,11 +25,16 @@ pipenv run python assignment0/main.py --incidents https://www.normanok.gov/sites
 
 ## Running Test Cases
 ```bash
+
+https://github.com/omigirish/cis6930sp24-assignment0/assets/56110537/b36bd60a-069c-461e-94dd-47d16953c274
+
+
 pipenv run pytest
 ```
 
 ## Project Demo
-![video](./resources/ProjectVideo.mov)
+
+https://github.com/omigirish/cis6930sp24-assignment0/assets/56110537/76647291-ba5c-413e-8d30-5233824f4899
 
 ## Project Directory Structure
 ```bash
