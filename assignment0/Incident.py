@@ -33,4 +33,4 @@ class IncidentReport:
         """
         Returns a string representation of the IncidentReport instance.
         """
-        return f"Incident Report:\nDate/Time: {self.date_time}\nIncident Number: {self.incident_number}\nLocation: {self.location}\nNature: {self.nature}\nORI: {self.ori}"
+        return f"{self.date_time} {self.incident_number} {self.location} {self.nature} {self.ori}"
