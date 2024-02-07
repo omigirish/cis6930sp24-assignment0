@@ -4,8 +4,20 @@ import urllib.request
 from io import BytesIO
 
 def fetch_incidents(url, headers={}):
-    '''The function fetch_incidents(url) takes a URL string and uses the Python urllib.request library
-    to grab one incident pdf for the Norman Police Report Webpage.
+    '''Fetches an incident PDF from a specified URL using the Python urllib.request library.
+    
+    Args:
+        url (str): The URL string of the incident PDF to fetch.
+        headers (dict, optional): Additional HTTP headers to include in the request. Defaults to an empty dictionary.
+        
+    Returns:
+        BytesIO: A BytesIO object containing the contents of the fetched incident PDF.
+        
+    Raises:
+        urllib.error.HTTPError: If an HTTP error occurs while fetching the PDF.
+        
+    Example:
+        pdf_bytes = fetch_incidents("https://example.com/incident.pdf")
     '''
     
     # Set headers

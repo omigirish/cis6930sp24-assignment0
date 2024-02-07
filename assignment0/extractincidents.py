@@ -5,12 +5,16 @@ import re
 exclude_strings = ["Date / Time Incident Number Location Nature Incident ORI", "Daily Incident Summary (Public)"]
 
 def insertIncident(line):       
+    '''Inserts an incident into an IncidentReport object based on the provided line.
+    
+    Args:
+        line (str): The line containing information about the incident.
+        
+    Returns:
+        IncidentReport or None: An IncidentReport object representing the incident if successful, otherwise None.
+    '''
+    
     if line not in exclude_strings:
-
-        # x = line.find("NORMAN POLICE DEPARTMENT")
-
-        # if x>0:
-        #     line= line[:x]
 
         i,j= (0,0)
 
