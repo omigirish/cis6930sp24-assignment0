@@ -41,10 +41,13 @@ def insertIncident(line):
 
 
                     keyword = location.split(" ")[-1]
-                    if keyword in ["MVA", "COP", "DDACTS", "911","EMS"]:
-                        nature = keyword + " " + nature
-                        # Remove the keyword from the address
-                        location = ' '.join(location.split()[:-1])
+                    if keyword in ["MVA", "COP", "DDACTS", "911","EMS","RAMPMVA"]:
+                        if not keyword == "RAMPMVA":
+                            nature = keyword + " " + nature
+                            location = ' '.join(location.split()[:-1])
+                        else:
+                            nature = "MVA " + nature
+                            location = ' '.join(location.split()[:-1]) + " RAMP"
                         
                     k=0
                     for c in nature:
@@ -53,7 +56,7 @@ def insertIncident(line):
                         k+=1
 
                     if ord(nature[k])!=32 and k!=0:
-                        location = location + nature[:k]
+                        location = location + nature[:k-1]
                         nature = nature[k-1:]
 
                 incident = IncidentReport(date_time,incident_number,location,nature,ori)
@@ -87,5 +90,6 @@ def extractincidents(file):
             i = insertIncident(line.strip())
             if i:
                 incidents.append(i)
+            print(i)
 
     return incidents
