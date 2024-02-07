@@ -90,6 +90,5 @@ def extractincidents(file):
             i = insertIncident(line.strip())
             if i:
                 incidents.append(i)
-            print(i)
 
     return incidents
