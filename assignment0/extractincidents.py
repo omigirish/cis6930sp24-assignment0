@@ -59,7 +59,6 @@ def insertIncident(line):
                 incident = IncidentReport(date_time,incident_number,location,nature,ori)
                 
         except UnboundLocalError as e:
-            print(e)
             return None
 
         return incident
