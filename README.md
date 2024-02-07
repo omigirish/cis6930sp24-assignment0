@@ -216,3 +216,55 @@ SQLite emerges as the database engine of choice for this project due to its ligh
 2. The program might give error if pdfs have non standard formatting. One such case migth occur when the location column has very long multi line address. (Although the program is tested and works fine for 2 line addresses).
 
 3. If an address ends in 911, then the string 911 is stripped from the address column and added to the nature column.
+
+## Test Cases
+
+### test_db.py
+
+1. **`test_db` fixture**:
+   - This fixture sets up a SQLite database for testing purposes and tears it down after all tests in the session are completed.
+
+2. **`test_createdb` function**:
+   - This test function verifies the `createdb()` function's behavior by checking if it returns an instance of `sqlite3.Connection` as expected. It creates a new database using `createdb()` and asserts that the returned object is of the correct type.
+
+3. **`test_populatedb` function**:
+   - This test function checks the behavior of the `populatedb()` function by populating the test database with mock incident data and then querying the database to ensure that the correct number of records has been inserted. It asserts that the number of records retrieved matches the expected count.
+
+4. **`test_status` function**:
+   - This test function verifies the behavior of the `status()` function by populating the test database with mock incident data and capturing the output of the `status()` function. It then asserts that the expected output, including incident counts grouped by nature, matches the captured output.
+
+5. **`cleanup_after_tests` fixture**:
+   - This fixture ensures that after all tests are completed, the database file is removed to clean up any residual test data. It removes the database file located at "./resources/normanpd.db" if it exists.
+
+These test cases collectively ensure the correctness and reliability of the database-related functions (`createdb()`, `populatedb()`, `status()`) implemented in the code.
+
+### test_extractincidents.py
+
+1. **`test_insertIncident_valid_line`**:
+   - This test case verifies that the `insertIncident` function correctly parses a valid incident line and returns an instance of `IncidentReport`. It provides a sample valid incident line as input and asserts that the output is indeed an instance of `IncidentReport`.
+
+2. **`test_insertIncident_valid_line2`**:
+   - Similar to the previous test case, this test case validates the `insertIncident` function's behavior with another valid incident line. It asserts that the output is an instance of `IncidentReport`.
+
+3. **`test_insertIncident_invalid_line`**:
+   - This test case examines the `insertIncident` function's handling of an invalid incident line. It provides an incomplete incident line as input and asserts that the function returns `None`, indicating failure to parse the line.
+
+4. **`test_extractincidents_valid_file`**:
+   - This test case verifies the `extractincidents` function's ability to extract incident data from a valid PDF file fetched using the `fetch_incidents` function. It asserts that the output is a list containing instances of `IncidentReport`, confirming successful extraction.
+
+5. **`test_extractincidents_invalid_file`**:
+   - This test case evaluates the `extractincidents` function's behavior when provided with an invalid PDF file path. It asserts that the function returns an empty list, indicating that no incidents were extracted from the invalid file.
+
+These test cases collectively ensure the correctness and reliability of the `insertIncident` and `extractincidents` functions, covering various scenarios such as valid and invalid input lines and valid and invalid PDF files.
+
+
+### test_incident.py
+
+1. **`test_fetch_incidents_valid_url`**:
+   - This test case verifies the `fetch_incidents` function's behavior when provided with a valid URL pointing to a PDF file containing incident data. It asserts that the function returns a non-None file object and checks if the file object is readable.
+
+2. **`test_fetch_incidents_invalid_url`**:
+   - This test case evaluates the `fetch_incidents` function's handling of an invalid URL. It uses `pytest.raises` to check if the function raises an exception when provided with an invalid URL.
+
+These test cases ensure that the `fetch_incidents` function behaves as expected when fetching incident data from URLs, handling both valid and invalid cases appropriately.
+
