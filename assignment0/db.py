@@ -70,16 +70,8 @@ def status(db):
                 ORDER BY COUNT(*) DESC, nature ASC;
                 """)
     
-    blank_count=0
     for (nature, count) in data:
-        if nature:
-            print(f"{nature}|{count}")
-        else:
-            blank_count=count
-        
-    if blank_count>0:
-        print(f"|{count}")
-
+        print(f"{nature}|{count}")       
 
     curr.close()
 
